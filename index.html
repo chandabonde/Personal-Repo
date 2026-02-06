@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Only Mine 💘</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      font-family: "Comic Sans MS", cursive;
+    }
+
+    /* Background */
+    .bg {
+      background: url("bear.png") no-repeat center center/contain;
+      background-color: #ffecec;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Popup card */
+    .content {
+      background: rgba(255, 255, 255, 0.88);
+      padding: 30px 45px;
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+
+      width: 75vw;
+      max-width: 720px;
+      max-height: 80vh;
+      overflow-y: auto;
+
+      position: relative;
+      z-index: 5;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 14px;
+      color: #6c3483;
+    }
+
+    /* Buttons */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 14px 32px;
+      font-size: 20px;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    #yes {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    #no {
+      background-color: #e74c3c;
+      color: white;
+    }
+
+    /* Warning text */
+    .warning {
+      margin-top: 15px;
+      font-size: 8px;
+      color: #444;
+      letter-spacing: 0.3px;
+    }
+
+    #message {
+      display: none;
+      margin-top: 25px;
+      font-size: 22px;
+      line-height: 1.6;
+      color: #2d3436;
+    }
+
+    #message b {
+      color: #c0392b;
+    }
+
+    /* Falling hearts & roses */
+    .heart {
+      position: fixed;
+      top: -30px;
+      font-size: 26px;
+      animation: fall linear forwards;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="bg">
+  <div class="content">
+    <h1 id="question">Will you be my Valentine? 🥺💘</h1>
+
+    <div class="buttons" id="buttons">
+      <button id="yes">YES 🥰💍</button>
+      <button id="no">NO 😜🏃‍♂️</button>
+    </div>
+
+    <div class="warning" id="warning">
+      ⚠️ <b>WARNING:</b> Strict warning. Click <b>YES</b> only 😒😈
+    </div>
+
+    <div id="message">
+      💘 <b>YAYYYYY!!!</b> 💘💘💘 <br><br>
+
+      I KNEW IT 😌❤️ <br><br>
+
+      From today? 🤔 <br>
+      Umm… <b>NO</b> 😏 <br><br>
+
+      From <b>9 years, 1 month & 23 days</b> ⏳💖 <br>
+      you are already <b>ONLY MINE</b>  <br>
+      and you will be <b>mine forever</b> 😈💘 <br><br>
+
+      I actually wanted to make something like this <br>
+      on your birthday 🎂🥺 <br>
+      but time said: <b>“not today”</b> 😂🙈 <br><br>
+
+      Hehe… so I made this just for you 😌💕 <br>
+      <b>Pawan</b> <br>
+      (aka <b>Mr. Mahajan</b> 😎💖) <br><br>
+
+      If you ever forget how special you are 😌 <br>
+      just remember… <br>
+      you survived <b>9+ years</b> with <b>ME</b> 😏😂 <br>
+      and that itself deserves an award 🏆💖 <br><br>
+
+      “In a world full of temporary things, <br>
+      you are my <b>forever</b>.” 💞✨ <br><br>
+
+      I love you soooo much 💕 <br>
+      Happy Valentine’s Day, my love 💘🌹
+<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>
+
+      Now that you said <b>YES</b> 🥺💖 <br>
+      can we go on a little date together? 🌸😊
+    </div>
+
+    <audio id="song" src="music.mp3" autoplay loop></audio>
+  </div>
+</div>
+
+<script>
+  const noBtn = document.getElementById("no");
+  const yesBtn = document.getElementById("yes");
+  const buttons = document.getElementById("buttons");
+  const question = document.getElementById("question");
+  const message = document.getElementById("message");
+  const warning = document.getElementById("warning");
+  const song = document.getElementById("song");
+
+  // Try autoplay
+  window.addEventListener("load", () => {
+    song.play().catch(() => {});
+  });
+
+  // NO button escapes anywhere on screen 😈
+  noBtn.addEventListener("mouseover", () => {
+    noBtn.style.position = "fixed";
+
+    const maxX = window.innerWidth - noBtn.offsetWidth;
+    const maxY = window.innerHeight - noBtn.offsetHeight;
+
+    noBtn.style.left = Math.random() * maxX + "px";
+    noBtn.style.top = Math.random() * maxY + "px";
+  });
+
+  // Falling hearts & roses
+  function sprinkleHearts() {
+    const items = ["❤️", "💖", "💘", "🌹"];
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = items[Math.floor(Math.random() * items.length)];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }
+
+  // YES click 💖
+  yesBtn.addEventListener("click", () => {
+    question.style.display = "none";
+    buttons.style.display = "none";
+    warning.style.display = "none";
+    message.style.display = "block";
+    song.play();
+    setInterval(sprinkleHearts, 300);
+  });
+</script>
+
+</body>
+</html>
