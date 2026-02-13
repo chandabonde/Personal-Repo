@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Will You Be My Valentine 💘</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -17,7 +15,6 @@ body {
   overflow: hidden;
 }
 
-/* Background */
 .bg {
   background: url("bear.png") no-repeat center center/cover;
   height: 100vh;
@@ -28,7 +25,6 @@ body {
   padding: 20px;
 }
 
-/* Popup */
 .content {
   background: rgba(255,255,255,0.9);
   padding: 25px;
@@ -47,7 +43,6 @@ h1 {
   color: #6c3483;
 }
 
-/* Buttons */
 .buttons {
   display: flex;
   justify-content: center;
@@ -62,6 +57,11 @@ button {
   border-radius: 10px;
   cursor: pointer;
   min-width: 110px;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
 }
 
 #yes {
@@ -74,14 +74,12 @@ button {
   color: white;
 }
 
-/* Warning */
 .warning {
   font-size: 11px;
   margin-top: 8px;
   color: #555;
 }
 
-/* Message */
 #message {
   display: none;
   margin-top: 20px;
@@ -94,7 +92,7 @@ button {
   color: #c0392b;
 }
 
-/* Falling hearts */
+/* Hearts */
 .heart {
   position: fixed;
   top: -30px;
@@ -111,19 +109,10 @@ button {
   }
 }
 
-/* Mobile adjustments */
 @media (max-width: 480px) {
-  h1 {
-    font-size: 20px;
-  }
-
-  #message {
-    font-size: 16px;
-  }
-
-  button {
-    font-size: 16px;
-  }
+  h1 { font-size: 20px; }
+  #message { font-size: 16px; }
+  button { font-size: 16px; }
 }
 </style>
 </head>
@@ -135,48 +124,54 @@ button {
     <h1 id="question">Will you be my Valentine? 🥺💘</h1>
 
     <div class="buttons" id="buttons">
-      <button id="yes">YES 🥰💍</button>
-      <button id="no">NO 😜🏃‍♂️</button>
+      <button id="yes">YES 💍🥰</button>
+      <button id="no">NO 🙈🏃‍♂️</button>
     </div>
 
     <div class="warning" id="warning">
       ⚠️ WARNING: Click YES only 😒😈
     </div>
 
-    <div id="message">
-      💘 <b>YAYYYYY!!!</b> 💘💘💘 <br><br>
+  <div id="message">
+  💘 <b>YAYYYYY!!!</b> 💘💘💘 <br><br>
 
-      I KNEW IT 😌❤️ <br><br>
+  I KNEW IT 😌❤️ <br><br>
 
-      From today? 🤔 <br>
-      Umm… <b>NO</b> 😏 <br><br>
+  From today? 🤔 <br>
+  Umm… <b>NO</b> 😏 <br><br>
 
-      From <b>9 years, 1 month & 23 days</b> ⏳💖 <br>
-      you are already <b>ONLY MINE</b> 🫶😌 <br>
-      and you will be <b>mine forever</b> 😈💘 <br><br>
+  From <b>9 years, 1 month & 23 days</b> ⏳💖 <br>
+  you are already <b>ONLY MINE</b> <br>
+  and you will be <b>mine forever</b> 😈💘 <br><br>
 
-      I actually wanted to make something like this <br>
-      on your birthday 🎂🥺 <br>
-      but time said: <b>“not today”</b> 😂🙈 <br><br>
+  I actually wanted to make something like this <br>
+  on your birthday 🎂🥺 <br>
+  but time said: <b>“not today”</b> 😂🙈 <br><br>
 
-      Hehe… so I made this just for you 😌💕 <br>
-      <b>Pawan</b> <br>
-      (aka <b>Mr. Mahajan</b> 😎💖) <br><br>
+  Hehe… so I made this just for you 😌💕 <br>
+  <b>Pawan</b> <br>
+  (aka <b>Mr. Mahajan</b> 😎💖) <br><br>
 
-      If you ever forget how special you are 😌 <br>
-      just remember… <br>
-      you survived <b>9+ years</b> with <b>ME</b> 😏😂 <br>
-      and that itself deserves an award 🏆💖 <br><br>
+  If you ever forget how special you are 😌 <br>
+  just remember… <br>
+  you survived <b>9+ years</b> with <b>ME</b> 😏😂 <br>
+  and that itself deserves an award 🏆💖 <br><br>
 
-      “In a world full of temporary things, <br>
-      you are my <b>forever</b>.” 💞✨ <br><br>
+  “In a world full of temporary things, <br>
+  you are my <b>forever</b>.” 💞✨ <br><br>
 
-      I love you soooo much 💕🥹 <br>
-      Happy Valentine’s Day, my love 💘🌹 <br><br>
+  I love you soooo much 💕 <br>
+  Happy Valentine’s Day, my love 💘🌹
 
-      Now that you said <b>YES</b> 😌💖 <br>
-      come on… take me on our date 🥺🌸💑
-    </div>
+  <br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>
+  💖<br><br>💖<br><br>💖<br><br>💖<br><br>
+  💖<br><br>💖<br><br>💖<br><br>💖<br><br>
+  💖<br><br>💖<br><br>💖<br><br>💖<br><br>
+
+  Now that you said <b>YES</b> 🥺💖 <br>
+  can we go on a little date together? 🌸😊
+</div>
+
 
     <audio id="song" src="music.mp3" autoplay loop></audio>
   </div>
@@ -191,36 +186,39 @@ const message = document.getElementById("message");
 const warning = document.getElementById("warning");
 const song = document.getElementById("song");
 
-window.addEventListener("load", () => {
-  song.play().catch(() => {});
-});
-
-noBtn.addEventListener("mouseover", () => {
-  noBtn.style.position = "fixed";
+/* Reliable moving NO button */
+function moveNoButton() {
   const maxX = window.innerWidth - noBtn.offsetWidth;
   const maxY = window.innerHeight - noBtn.offsetHeight;
+
+  noBtn.style.position = "fixed";
   noBtn.style.left = Math.random() * maxX + "px";
   noBtn.style.top = Math.random() * maxY + "px";
-});
-
-function sprinkleHearts() {
-  const items = ["❤️", "💖", "💘", "🌹"];
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerText = items[Math.floor(Math.random() * items.length)];
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 5000);
 }
 
-yesBtn.addEventListener("click", () => {
-  question.style.display = "none";
-  buttons.style.display = "none";
-  warning.style.display = "none";
-  message.style.display = "block";
+noBtn.addEventListener("mouseenter", moveNoButton);
+noBtn.addEventListener("touchstart", moveNoButton);
+
+/* Hearts animation */
+function sprinkleHearts() {
+  const items = ["❤️","💖","💘","🌹"];
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = items[Math.floor(Math.random()*items.length)];
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.animationDuration = (Math.random()*2+3) + "s";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),5000);
+}
+
+/* YES click */
+yesBtn.addEventListener("click", ()=>{
+  question.style.display="none";
+  buttons.style.display="none";
+  warning.style.display="none";
+  message.style.display="block";
   song.play();
-  setInterval(sprinkleHearts, 300);
+  setInterval(sprinkleHearts,300);
 });
 </script>
 
