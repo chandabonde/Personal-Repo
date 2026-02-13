@@ -1,116 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Only Mine 💘</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Will You Be My Valentine 💘</title>
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      overflow: hidden;
-      font-family: "Comic Sans MS", cursive;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    /* Background */
-    .bg {
-      background: url("bear.png") no-repeat center center/contain;
-      background-color: #ffecec;
-      height: 100vh;
-      width: 100vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
+body {
+  margin: 0;
+  font-family: Calibri, "Segoe UI", Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
 
-    /* Popup card */
-    .content {
-      background: rgba(255, 255, 255, 0.88);
-      padding: 30px 45px;
-      border-radius: 22px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-      text-align: center;
+/* Background */
+.bg {
+  background: url("bear.png") no-repeat center center/cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-      width: 75vw;
-      max-width: 720px;
-      max-height: 80vh;
-      overflow-y: auto;
+/* Popup */
+.content {
+  background: rgba(255,255,255,0.9);
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
 
-      position: relative;
-      z-index: 5;
-    }
+h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #6c3483;
+}
 
-    h1 {
-      font-size: 30px;
-      margin-bottom: 14px;
-      color: #6c3483;
-    }
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
 
-    /* Buttons */
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 10px;
-    }
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  min-width: 110px;
+}
 
-    button {
-      padding: 14px 32px;
-      font-size: 20px;
-      border: none;
-      border-radius: 14px;
-      cursor: pointer;
-      white-space: nowrap;
-    }
+#yes {
+  background-color: #27ae60;
+  color: white;
+}
 
-    #yes {
-      background-color: #27ae60;
-      color: white;
-    }
+#no {
+  background-color: #e74c3c;
+  color: white;
+}
 
-    #no {
-      background-color: #e74c3c;
-      color: white;
-    }
+/* Warning */
+.warning {
+  font-size: 11px;
+  margin-top: 8px;
+  color: #555;
+}
 
-    /* Warning text */
-    .warning {
-      margin-top: 15px;
-      font-size: 8px;
-      color: #444;
-      letter-spacing: 0.3px;
-    }
+/* Message */
+#message {
+  display: none;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
 
-    #message {
-      display: none;
-      margin-top: 25px;
-      font-size: 22px;
-      line-height: 1.6;
-      color: #2d3436;
-    }
+#message b {
+  color: #c0392b;
+}
 
-    #message b {
-      color: #c0392b;
-    }
+/* Falling hearts */
+.heart {
+  position: fixed;
+  top: -30px;
+  font-size: 22px;
+  animation: fall linear forwards;
+  z-index: 999;
+  pointer-events: none;
+}
 
-    /* Falling hearts & roses */
-    .heart {
-      position: fixed;
-      top: -30px;
-      font-size: 26px;
-      animation: fall linear forwards;
-      z-index: 999;
-      pointer-events: none;
-    }
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
 
-    @keyframes fall {
-      to {
-        transform: translateY(100vh);
-        opacity: 0;
-      }
-    }
-  </style>
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  #message {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -125,7 +140,7 @@
     </div>
 
     <div class="warning" id="warning">
-      ⚠️ <b>WARNING:</b> Strict warning. Click <b>YES</b> only 😒😈
+      ⚠️ WARNING: Click YES only 😒😈
     </div>
 
     <div id="message">
@@ -137,7 +152,7 @@
       Umm… <b>NO</b> 😏 <br><br>
 
       From <b>9 years, 1 month & 23 days</b> ⏳💖 <br>
-      you are already <b>ONLY MINE</b>  <br>
+      you are already <b>ONLY MINE</b> 🫶😌 <br>
       and you will be <b>mine forever</b> 😈💘 <br><br>
 
       I actually wanted to make something like this <br>
@@ -156,12 +171,11 @@
       “In a world full of temporary things, <br>
       you are my <b>forever</b>.” 💞✨ <br><br>
 
-      I love you soooo much 💕 <br>
-      Happy Valentine’s Day, my love 💘🌹
-<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>💖<br><br>
+      I love you soooo much 💕🥹 <br>
+      Happy Valentine’s Day, my love 💘🌹 <br><br>
 
-      Now that you said <b>YES</b> 🥺💖 <br>
-      can we go on a little date together? 🌸😊
+      Now that you said <b>YES</b> 😌💖 <br>
+      come on… take me on our date 🥺🌸💑
     </div>
 
     <audio id="song" src="music.mp3" autoplay loop></audio>
@@ -169,51 +183,45 @@
 </div>
 
 <script>
-  const noBtn = document.getElementById("no");
-  const yesBtn = document.getElementById("yes");
-  const buttons = document.getElementById("buttons");
-  const question = document.getElementById("question");
-  const message = document.getElementById("message");
-  const warning = document.getElementById("warning");
-  const song = document.getElementById("song");
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const buttons = document.getElementById("buttons");
+const question = document.getElementById("question");
+const message = document.getElementById("message");
+const warning = document.getElementById("warning");
+const song = document.getElementById("song");
 
-  // Try autoplay
-  window.addEventListener("load", () => {
-    song.play().catch(() => {});
-  });
+window.addEventListener("load", () => {
+  song.play().catch(() => {});
+});
 
-  // NO button escapes anywhere on screen 😈
-  noBtn.addEventListener("mouseover", () => {
-    noBtn.style.position = "fixed";
+noBtn.addEventListener("mouseover", () => {
+  noBtn.style.position = "fixed";
+  const maxX = window.innerWidth - noBtn.offsetWidth;
+  const maxY = window.innerHeight - noBtn.offsetHeight;
+  noBtn.style.left = Math.random() * maxX + "px";
+  noBtn.style.top = Math.random() * maxY + "px";
+});
 
-    const maxX = window.innerWidth - noBtn.offsetWidth;
-    const maxY = window.innerHeight - noBtn.offsetHeight;
+function sprinkleHearts() {
+  const items = ["❤️", "💖", "💘", "🌹"];
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = items[Math.floor(Math.random() * items.length)];
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}
 
-    noBtn.style.left = Math.random() * maxX + "px";
-    noBtn.style.top = Math.random() * maxY + "px";
-  });
-
-  // Falling hearts & roses
-  function sprinkleHearts() {
-    const items = ["❤️", "💖", "💘", "🌹"];
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerText = items[Math.floor(Math.random() * items.length)];
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 5000);
-  }
-
-  // YES click 💖
-  yesBtn.addEventListener("click", () => {
-    question.style.display = "none";
-    buttons.style.display = "none";
-    warning.style.display = "none";
-    message.style.display = "block";
-    song.play();
-    setInterval(sprinkleHearts, 300);
-  });
+yesBtn.addEventListener("click", () => {
+  question.style.display = "none";
+  buttons.style.display = "none";
+  warning.style.display = "none";
+  message.style.display = "block";
+  song.play();
+  setInterval(sprinkleHearts, 300);
+});
 </script>
 
 </body>
